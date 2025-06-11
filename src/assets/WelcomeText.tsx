@@ -7,7 +7,7 @@ export default function WelcomeText() {
                     Try it out in this preview :) </p>
             </div>
             <div className="welcome-logo-section">
-                <img src="/public/img/timetravel-logo.svg"/>
+                <img src="../public/img/timetravel-logo.svg"/>
             </div>
         </div>
     )
