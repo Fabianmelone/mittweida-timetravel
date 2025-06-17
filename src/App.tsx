@@ -1,6 +1,6 @@
-import LoadingScreen from "./assets/LoadingScreen.tsx";
+import LoadingScreen from "./assets/components/LoadingScreen.tsx";
 import {useEffect, useState} from "react";
-import WelcomePage from "./assets/WelcomePage.tsx";
+import WelcomePage from "./assets/components/WelcomePage.tsx";
 
 function App() {
   const [loading, setLoading] = useState(true);

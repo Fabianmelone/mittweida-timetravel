@@ -1,0 +1,42 @@
+.ImageSlider {
+    position: relative;
+}
+.imgOne {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+}
+.imgTwo {
+    width: 100vw;
+    height:  100vh;
+    position: absolute;
+    inset: 0;
+}
+.slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+.sliderDiv {
+    position: relative;
+    height: 100vh;
+}
+
+.sliderLine {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: var(--timetravel-orange);
+    width: 3px;
+}
+.sliderButton {
+    height: 5rem;
+    width:  5rem;
+    position: absolute;
+    top: 50%;
+    box-shadow: 0 0 1rem var(--timetravel-orange);
+    transform: translateY(-50%);
+    background-color: var(--timetravel-orange);
+    border-radius: 10px;
+    background: url("../public/img/arrow-left.svg") left 10px center no-repeat, url("../public/img/arrow-right.svg") right 10px center no-repeat;
+}
