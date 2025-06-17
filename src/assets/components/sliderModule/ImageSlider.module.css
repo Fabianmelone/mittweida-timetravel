@@ -32,11 +32,12 @@
 .sliderButton {
     height: 5rem;
     width:  5rem;
+    margin-left: -2.5rem;
     position: absolute;
     top: 50%;
     box-shadow: 0 0 1rem var(--timetravel-orange);
     transform: translateY(-50%);
-    background-color: var(--timetravel-orange);
     border-radius: 10px;
     background: url("../public/img/arrow-left.svg") left 10px center no-repeat, url("../public/img/arrow-right.svg") right 10px center no-repeat;
+    background-color: var(--timetravel-orange);
 }
