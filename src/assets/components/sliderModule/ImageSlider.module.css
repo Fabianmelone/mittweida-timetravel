@@ -1,5 +1,6 @@
 .ImageSlider {
     position: relative;
+    overflow: hidden;
 }
 .imgOne {
     width: 100vw;
@@ -11,6 +12,7 @@
     height:  100vh;
     position: absolute;
     inset: 0;
+    top: 1px;
 }
 .slider {
     position: absolute;

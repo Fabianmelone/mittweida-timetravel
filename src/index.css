@@ -147,3 +147,49 @@ div.welcome-page {
     }
   }
 }
+
+.map-container {
+  height: 100vh;
+  width: 100vw;
+  .find-me-button {
+    position: absolute;
+    bottom: 2rem;
+    right: 10px;
+    background-color: var(--timetravel-orange);
+    z-index: 10000;
+  }
+  .my-location {
+    img {
+      width: 48px;
+      height: 48px;
+    }
+    .pin-label {
+      font-size: 1.75rem;
+      width: 8rem;
+      margin-left: -2.3rem;
+      font-family:  "Viga", sans-serif;
+      color: var(--timetravel-blue);
+      text-align: center;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: var(--timetravel-orange);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+  .nearby-button {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    z-index: 1000;
+    cursor: pointer;
+  }
+
+}
