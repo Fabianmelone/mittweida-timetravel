@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import WelcomePage from "./assets/components/WelcomePage.tsx";
 import MainPage from "./assets/components/MainPage.tsx";
 import {Route, useLocation} from "wouter";
+import TimeTravel from "./assets/components/TimeTravel.tsx"
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
   return (
       <>
         <Route path="/welcome" component={WelcomePage} />
+        <Route path="/timetravel/:slug" component={TimeTravel}/>
         <Route path="/" component={MainPage} />
       </>
   );

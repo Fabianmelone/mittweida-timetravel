@@ -2,19 +2,30 @@ import Map from "./Map/Map.tsx";
 import {useEffect, useState} from "react";
 import {RouteButton} from "./RouteButton/RouteButton.tsx";
 import L from 'leaflet';
-import { useNavigate } from "react-router-dom";
+import {useLocation} from "wouter";
 
 
-//testing for nearby location
+// testing for nearby location library
 // navigator.geolocation.getCurrentPosition = (success, error) => {
 //     success({
 //         coords: {
-//             latitude: 50.9856,
-//             longitude: 12.9797,
+//             latitude: 50.9851082,
+//             longitude: 12.9744165,
 //             accuracy: 10,
 //         },
 //     });
 // };
+
+// // testing for nearby stadtverwaltung
+navigator.geolocation.getCurrentPosition = (success, error) => {
+    success({
+        coords: {
+            latitude: 50.9856089,
+            longitude: 12.9797651,
+            accuracy: 10,
+        },
+    });
+};
 
 
 export default function MainPage() {
@@ -23,7 +34,7 @@ export default function MainPage() {
     const [selectedLabel, setSelectedLabel] = useState<string | null>(null);
     const [route, setRoute] = useState<[number, number][] | null>(null);
     const [isNearby, setIsNearby] = useState(false);
-    const navigate = useNavigate();
+    const [, navigate] = useLocation();
 
 
     useEffect(() => {
@@ -75,7 +86,7 @@ export default function MainPage() {
             />
 
             <RouteButton
-                visible={!!selectedDestination}
+                visible={!!selectedDestination && !isNearby}
                 onClick={handleRouteRequest}
                 label={selectedLabel}
                 />
@@ -83,9 +94,9 @@ export default function MainPage() {
             {isNearby && (
                 <button
                     className="nearby-button"
-                    onClick={() => navigate("/next-location")}
+                    onClick={() => navigate(`/timetravel/${selectedLabel?.toLowerCase().replace(/\s+/g, "-")}`)}
                 >
-                    Enter Location
+                    Time Travel {selectedLabel}
                 </button>
             )}
 

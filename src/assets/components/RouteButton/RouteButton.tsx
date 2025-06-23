@@ -12,7 +12,7 @@ export function RouteButton({ visible, onClick, label}: RouteButtonProps) {
     return (
         <div className={styles.routeButtonContainer}>
             <button onClick={onClick} className={styles.showRouteButton}>
-                Show Route to {label || "This Point"}
+                Directions to {label || "This Point"}
             </button>
         </div>
     )

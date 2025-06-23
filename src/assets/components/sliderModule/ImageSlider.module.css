@@ -10,9 +10,7 @@
 .imgTwo {
     width: 100vw;
     height:  100vh;
-    position: absolute;
     inset: 0;
-    top: 1px;
 }
 .slider {
     position: absolute;
@@ -30,6 +28,7 @@
     bottom: 0;
     background-color: var(--timetravel-orange);
     width: 3px;
+    z-index: 3;
 }
 .sliderButton {
     height: 5rem;
@@ -37,9 +36,119 @@
     margin-left: -2.5rem;
     position: absolute;
     top: 50%;
+    z-index: 3;
     box-shadow: 0 0 1rem var(--timetravel-orange);
     transform: translateY(-50%);
     border-radius: 10px;
     background: url("../public/img/arrow-left.svg") left 10px center no-repeat, url("../public/img/arrow-right.svg") right 10px center no-repeat;
     background-color: var(--timetravel-orange);
+}
+
+.afterContainer {
+    position: absolute;
+    width: 100vw;
+    height:  100vh;
+    inset: 0;
+    z-index: 1;
+}
+
+.beforeContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    z-index: 2;
+    top: 2px;
+}
+
+.afterDescription {
+    position: absolute;
+    right: 1rem;
+    bottom: 3rem;
+    border-radius: 10px;
+    padding: 0.5rem;
+    background-color: rgba(0, 51, 153, 0.40);
+    h2 {
+        font-size: 2rem;
+        font-family: "Tondu", sans-serif;
+    }
+}
+
+.beforeDescription {
+    position:  absolute;
+    left: 1rem;
+    bottom: 3rem;
+    border-radius: 10px;
+    padding: 0.5rem;
+    background-color: rgba(0, 51, 153, 0.40);
+    z-index: 2;
+    h2 {
+        font-size: 2rem;
+        font-family: "Tondu", sans-serif;
+    }
+}
+
+.closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 4;
+    padding: 1.5rem;
+    background: url("/public/img/close-button.svg") center no-repeat;
+    background-color: var(--timetravel-blue);
+}
+
+.additionalInfo {
+    position: absolute;
+    bottom: 0;
+    max-width: 400px;
+    min-width: 350px;
+    overflow-y: auto;
+    left: 50%;
+    z-index: 4;
+    background-color: var(--timetravel-blue);
+    padding: 1rem;
+    border-radius: 10px 10px 0px 0px;
+    h2 {
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 2rem;
+    }
+}
+
+.collapsed {
+    transform: translate(-50%, 70%);
+}
+
+.expanded {
+    transform: translate(-50%, 0%);
+}
+
+.slideContent {
+    background-color: transparent;
+    border: none;
+    padding: 2rem;
+    position: absolute;
+    top: .5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+.slideContent:focus,
+.slideContent:focus-visible {
+    outline: none;
+}
+
+/* Up arrow */
+.expandButton {
+    background-image: url('/public/img/downwards-toggle.svg');
+}
+
+/* Down arrow */
+.collapseButton {
+    background-image: url('/public/img/upwards-toggle.svg');
 }

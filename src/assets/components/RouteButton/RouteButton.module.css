@@ -1,17 +1,20 @@
 .routeButtonContainer {
     position: absolute;
-    bottom: 20px;
+    bottom: 20rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
 }
 
 .showRouteButton {
-    padding: 10px 16px;
-    font-size: 14px;
-    background-color: #007aff;
-    color: white;
+    padding: 1rem;
+    padding-right: 3rem;
+    font-size: 1.2rem;
+    width: 300px;
+    color: var(--timetravel-orange);
     border: none;
-    border-radius: 6px;
+    border-radius: 10px;
     cursor: pointer;
+    background: url("/public/img/arrow-right-orange.svg") center right 1rem no-repeat;
+    background-color: var(--timetravel-blue);
 }

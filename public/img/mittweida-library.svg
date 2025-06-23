@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" id="Bookmark-Book--Streamline-Core-Gradient" height="14" width="14">
+  <desc>
+    Bookmark Book Streamline Icon: https://streamlinehq.com
+  </desc>
+  <g id="Interface Essential/Bookmark Favorite/bookmark-book--bookmark-favorite-book-tag">
+    <path id="Subtract" fill="url(#paint0_linear_13603_7870)" fill-rule="evenodd" d="M2.75 0C1.7835 0 1 .783502 1 1.75v9.875C1 12.9367 2.06332 14 3.375 14h8.875c.4142 0 .75-.3358.75-.75s-.3358-.75-.75-.75h-.5v-1.7707C12.4594 10.6102 13 9.99325 13 9.25V1.5c0-.828427-.6716-1.5-1.5-1.5H2.75Zm7.5 12.5H3.375c-.48325 0-.875-.3918-.875-.875s.39175-.875.875-.875h6.875v1.75Zm-5-11c0-.13807.11193-.25.25-.25h4c.13807 0 .25.11193.25.25v5.25c0 .09943-.05893.18941-.15007.22916-.09114.03974-.19718.0217-.27004-.04596L7.5 5.23402 5.67011 6.9332c-.07286.06766-.17889.0857-.27004.04596C5.30893 6.93941 5.25 6.84943 5.25 6.75V1.5Z" clip-rule="evenodd"></path>
+  </g>
+  <defs>
+    <linearGradient id="paint0_linear_13603_7870" x1="1.461" x2="16.073" y1="1.131" y2="8.19" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9b2227"></stop>
+      <stop offset="1" stop-color="#003399"></stop>
+    </linearGradient>
+  </defs>
+</svg>

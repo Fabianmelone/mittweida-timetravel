@@ -1,5 +1,5 @@
 :root {
-  font-family: "Tondu", sans-serif;
+  font-family: "Viga", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -95,6 +95,7 @@ div.loading-screen {
     align-items: center;
     h1 {
       text-align: center;
+      font-family: 'Tondu', sans-serif;
     }
     img {
       text-align: center;
@@ -107,8 +108,11 @@ div.loading-screen {
   }
 }
 
+
+/* Welcome Page*/
 div.welcome-page {
   div.welcome-text {
+    z-index: 4;
     h2 {
       margin-top: 0;
     }
@@ -135,6 +139,7 @@ div.welcome-page {
     position: absolute;
     bottom: 8rem;
     left: 50%;
+    z-index: 4;
     transform: translateX(-50%);
     background: url("../public/img/arrow-right.svg") no-repeat right 10px center;
     background-color: var(--timetravel-orange);
@@ -148,6 +153,8 @@ div.welcome-page {
   }
 }
 
+
+/* Map styles*/
 .map-container {
   height: 100vh;
   width: 100vw;
@@ -179,17 +186,33 @@ div.welcome-page {
   }
   .nearby-button {
     position: absolute;
-    bottom: 100px;
+    bottom: 20rem;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #007bff;
-    color: white;
-    padding: 12px 20px;
-    font-size: 16px;
+    background-color: var(--timetravel-blue);
+    color: var(--timetravel-orange);
+    padding: 1rem;
+    font-size: 1.2rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     z-index: 1000;
     cursor: pointer;
   }
+}
 
+/*Time Travel*/
+.time-travel {
+  h1 {
+    position: absolute;
+    top: 3rem;
+    left: 4rem;
+    z-index: 4;
+  }
+ .logo {
+   position: absolute;
+   top: 15rem;
+   left: 50%;
+   z-index: 4;
+   transform: translate(-50%, -50%);
+ }
 }
