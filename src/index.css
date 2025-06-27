@@ -184,19 +184,24 @@ div.welcome-page {
       line-height: normal;
     }
   }
-  .nearby-button {
+  .time-travel-button {
     position: absolute;
     bottom: 20rem;
     left: 50%;
+    width: 300px;
     transform: translateX(-50%);
     background-color: var(--timetravel-blue);
     color: var(--timetravel-orange);
     padding: 1rem;
+    padding-right: 3rem;
     font-size: 1.2rem;
     border: none;
     border-radius: 10px;
     z-index: 1000;
     cursor: pointer;
+    background: url("/public/img/timetravel-logo.svg") center right 1rem no-repeat;
+    background-size: 3rem;
+    background-color: var(--timetravel-blue);
   }
 }
 

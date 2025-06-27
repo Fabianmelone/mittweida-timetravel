@@ -17,7 +17,7 @@ import {useLocation} from "wouter";
 // };
 
 // // testing for nearby stadtverwaltung
-navigator.geolocation.getCurrentPosition = (success, error) => {
+navigator.geolocation.getCurrentPosition = (success, err) => {
     success({
         coords: {
             latitude: 50.9856089,
@@ -93,7 +93,7 @@ export default function MainPage() {
 
             {isNearby && (
                 <button
-                    className="nearby-button"
+                    className="time-travel-button"
                     onClick={() => navigate(`/timetravel/${selectedLabel?.toLowerCase().replace(/\s+/g, "-")}`)}
                 >
                     Time Travel {selectedLabel}

@@ -3,13 +3,13 @@
     overflow: hidden;
 }
 .imgOne {
-    width: 100vw;
-    height: 100vh;
+    width: auto;
+    height: 100%;
     display: block;
 }
 .imgTwo {
-    width: 100vw;
-    height:  100vh;
+    width: auto;
+    height:  100%;
     inset: 0;
 }
 .slider {
@@ -63,27 +63,25 @@
 
 .afterDescription {
     position: absolute;
-    right: 1rem;
+    right: 3rem;
     bottom: 3rem;
     border-radius: 10px;
     padding: 0.5rem;
-    background-color: rgba(0, 51, 153, 0.40);
     h2 {
-        font-size: 2rem;
+        font-size: 3.5rem;
         font-family: "Tondu", sans-serif;
     }
 }
 
 .beforeDescription {
     position:  absolute;
-    left: 1rem;
+    left: 3rem;
     bottom: 3rem;
     border-radius: 10px;
     padding: 0.5rem;
-    background-color: rgba(0, 51, 153, 0.40);
     z-index: 2;
     h2 {
-        font-size: 2rem;
+        font-size: 3.5rem;
         font-family: "Tondu", sans-serif;
     }
 }
@@ -103,12 +101,12 @@
     bottom: 0;
     max-width: 400px;
     min-width: 350px;
-    overflow-y: auto;
     left: 50%;
     z-index: 4;
     background-color: var(--timetravel-blue);
     padding: 1rem;
     border-radius: 10px 10px 0px 0px;
+    height: auto;
     h2 {
         text-align: center;
         margin-top: 2rem;
@@ -121,7 +119,7 @@
 }
 
 .expanded {
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, 30%);
 }
 
 .slideContent {

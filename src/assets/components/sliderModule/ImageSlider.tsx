@@ -3,8 +3,8 @@ import { useLocation }  from 'wouter';
 import styles from "./ImageSlider.module.css";
 
 
-const AfterMoreInfo = ({ isExpanded, toggle }: { isExpanded: boolean, toggle: () => void }) => (
-    <div className={`${styles.additionalInfo} ${isExpanded ? styles.expanded : styles.collapsed}`}>
+const AfterMoreInfo = ({ isExpanded, toggle, imageRevealFraq }: { isExpanded: boolean, toggle: () => void, imageRevealFraq: number }) => (
+    <div className={`${styles.additionalInfo} ${isExpanded ? styles.expanded : styles.collapsed}`} style={{top: `${imageRevealFraq * 2}%`}}>
         <button
             className={`${styles.slideContent} ${isExpanded ? styles.expandButton : styles.collapseButton}`}
             onClick={toggle}
@@ -21,8 +21,8 @@ const AfterMoreInfo = ({ isExpanded, toggle }: { isExpanded: boolean, toggle: ()
     </div>
 )
 
-const BeforeMoreInfo = ({ isExpanded, toggle }: { isExpanded: boolean, toggle: () => void }) => (
-    <div className={`${styles.additionalInfo} ${isExpanded ? styles.expanded : styles.collapsed}`}>
+const BeforeMoreInfo = ({ isExpanded, toggle, imageRevealFraq }: { isExpanded: boolean, toggle: () => void, imageRevealFraq: number }) => (
+    <div className={`${styles.additionalInfo} ${isExpanded ? styles.expanded : styles.collapsed}`} style={{top: `${(200 + (-1 * imageRevealFraq * 2))}%`}}>
         <button
             className={`${styles.slideContent} ${isExpanded ? styles.expandButton : styles.collapseButton}`}
             onClick={toggle}
@@ -48,6 +48,7 @@ export default function ImageSlider({imageOne, imageTwo}: ImageProps) {
     const imageContainer = useRef<HTMLDivElement>(null);
     const [location] = useLocation() as [string, (to: string) => void];
     const [, navigate] = useLocation();
+    const sliderPercentage = Math.round(((imageRevealFraq * 100)) * 100 / 100);
 
 // Now you can safely do:
     const showDescriptions = location.startsWith("/timetravel");
@@ -82,8 +83,9 @@ export default function ImageSlider({imageOne, imageTwo}: ImageProps) {
         window.ontouchend = null;
     }
 
-    const after = imageRevealFraq <= 0;
-    const before = imageRevealFraq >= 1;
+
+    const after = imageRevealFraq < 0.5;
+    const before = imageRevealFraq > 0.5;
 
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -98,11 +100,11 @@ export default function ImageSlider({imageOne, imageTwo}: ImageProps) {
             <div className={styles.afterContainer}>
                 <img src={imageOne} className={styles.imgOne} alt="new Image"/>
                 {!after && showDescriptions && (
-                    <div className={styles.afterDescription}>
+                    <div className={styles.afterDescription} style={{ opacity: imageRevealFraq < 0.5 ? 0 : 1}}>
                         <h2>After</h2>
-                        <p>Lorem ipsum blabsllalsldbflsalkdf</p>
                     </div>
                 )}
+                {showDescriptions && after && <AfterMoreInfo isExpanded={isExpanded} toggle={() => setIsExpanded(!isExpanded)} imageRevealFraq={sliderPercentage} />}
             </div>
             <div className={styles.beforeContainer}  style={{
                 clipPath:`polygon(0 0, ${imageRevealFraq * 100}% 0, ${imageRevealFraq * 100}% 100%, 0 100%)`
@@ -110,11 +112,11 @@ export default function ImageSlider({imageOne, imageTwo}: ImageProps) {
                 <img src={imageTwo} className={styles.imgTwo} alt="old Image"
                     />
                 {!before && showDescriptions && (
-                    <div className={styles.beforeDescription}>
+                    <div className={styles.beforeDescription} style={{ opacity: imageRevealFraq > 0.5 ? 0 : 1}}>
                         <h2>Before</h2>
-                        <p>Lorem ipsum blabsllalsldbflsalkdf</p>
                     </div>
                 )}
+                {before && showDescriptions && <BeforeMoreInfo isExpanded={isExpanded} toggle={() => setIsExpanded(!isExpanded)} imageRevealFraq={sliderPercentage} />}
             </div>
 
             <div className={styles.slider}
@@ -131,8 +133,8 @@ export default function ImageSlider({imageOne, imageTwo}: ImageProps) {
                 </div>
             </div>
 
-            {after && <AfterMoreInfo isExpanded={isExpanded} toggle={() => setIsExpanded(!isExpanded)} />}
-            {before && <BeforeMoreInfo isExpanded={isExpanded} toggle={() => setIsExpanded(!isExpanded)} />}
+
+
         </div>
     )
 }
