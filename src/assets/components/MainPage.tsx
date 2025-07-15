@@ -14,27 +14,11 @@ import {mutate} from "swr";
 
 
 // testing for nearby location library
-navigator.geolocation.getCurrentPosition = (success) => {
-    success({
-        coords: {
-            latitude: 50.9860979,
-            longitude: 12.9674641,
-            accuracy: 10,
-            altitude: null,
-            altitudeAccuracy: null,
-            heading: null,
-            speed: null,
-        },
-        timestamp: Date.now(),
-    } as GeolocationPosition);
-};
-
-// testing for nearby stadtverwaltung
 // navigator.geolocation.getCurrentPosition = (success) => {
 //     success({
 //         coords: {
-//             latitude: 50.9856058,
-//             longitude: 12.9808861,
+//             latitude: 50.9860979,
+//             longitude: 12.9674641,
 //             accuracy: 10,
 //             altitude: null,
 //             altitudeAccuracy: null,
@@ -44,6 +28,22 @@ navigator.geolocation.getCurrentPosition = (success) => {
 //         timestamp: Date.now(),
 //     } as GeolocationPosition);
 // };
+
+// testing for nearby stadtverwaltung
+navigator.geolocation.getCurrentPosition = (success) => {
+    success({
+        coords: {
+            latitude: 50.9856058,
+            longitude: 12.9808861,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+        },
+        timestamp: Date.now(),
+    } as GeolocationPosition);
+};
 
 
 export default function MainPage() {
