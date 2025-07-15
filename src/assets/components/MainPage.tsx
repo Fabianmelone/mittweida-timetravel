@@ -128,15 +128,21 @@ export default function MainPage() {
     };
 
     //fetch
-    const fetcher = (url: string) => fetch(url).then(res => res.json());
+    const fetcher = (url: string) => fetch(url).then(res => {
+        if (!res.ok) throw new Error("Failed to fetch");
+        return res.json();
+    });
+
     const { data: visitedLocation =[] , error, isLoading } = useSWR<string[]>(
         'http://localhost:3000/location/visited',
         fetcher
     );
 
-    if (error) {
-        console.error("Failed to load Api", error);
-    }
+    useEffect(() => {
+        if (error) {
+            console.warn("Backend not available. Proceeding without visited location data.");
+        }
+    }, [error]);
 
     return (
         <div className="map-container">
