@@ -191,7 +191,7 @@ div.welcome-page {
   }
   .time-travel-button {
     position: absolute;
-    bottom: 20rem;
+    bottom: 10rem;
     left: 50%;
     width: 300px;
     transform: translateX(-50%);
