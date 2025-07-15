@@ -8,8 +8,8 @@ import TimeTravel from "./assets/components/TimeTravel.tsx"
 
 function App() {
     const [location, setLocation] = useLocation();
-
-  const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
+    const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
@@ -17,15 +17,19 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const hasVisited = localStorage.getItem("hasVisited");
+      if (!loading && !ready) {
+          const hasVisited = localStorage.getItem("hasVisited");
+          if (!hasVisited && (location === "/" || location === "")) {
+              localStorage.setItem("hasVisited", "true");
+              setLocation("/welcome")
+          }
+          setReady(true);
+      }
+    }, [location, setLocation, ready, loading]);
 
-    if (!hasVisited && (location === "/" || location === "")) {
-        localStorage.setItem("hasVisited", "true");
-        setLocation("/welcome")
-    }
-    }, [location, setLocation]);
-
-  if (loading) return <LoadingScreen />;
+  if (loading || !ready) {
+      return <LoadingScreen />;
+  }
 
 
 
