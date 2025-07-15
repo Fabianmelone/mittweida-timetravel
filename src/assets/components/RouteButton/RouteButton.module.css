@@ -11,10 +11,10 @@
     padding-right: 3rem;
     font-size: 1.2rem;
     width: 300px;
-    color: var(--timetravel-orange);
+    color: #fff;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    background: url("/public/img/arrow-right-orange.svg") center right 1rem no-repeat;
+    background: url("/public/img/arrow-right.svg") center right 1rem no-repeat;
     background-color: var(--timetravel-blue);
 }

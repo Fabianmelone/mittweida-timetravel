@@ -4,6 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import RoutingControl from "../RoutingControl/RoutingControl.tsx";
 import {SinglePin} from "./SinglePin.tsx";
 import {LocateControl} from "./LocateControl.tsx";
+import locationData from "../../../data/LocationData.json";
 
 const initialPosition: [number, number] = [50.9853, 12.9741];
 
@@ -14,9 +15,20 @@ interface MapProps {
     setSelectedDestination: (pos: [number, number]) => void;
     setSelectedLabel: (label: string) => void;
     route: [number, number][] | null;
+    visitedLabels: string[];
 }
 
-export default function Map({userPosition, setUserPosition, setSelectedDestination, setSelectedLabel, route}: MapProps) {
+interface LocationData {
+    title: string;
+    position: number[];
+    icon: string;
+    images: string[];
+    beforeAfter: string[];
+}
+
+const typeLocationData: Record<string, LocationData> = locationData;
+
+export default function Map({userPosition, setUserPosition, setSelectedDestination, setSelectedLabel, route, visitedLabels}: MapProps) {
     return (
         <MapContainer center={initialPosition} zoom={16} scrollWheelZoom={false} className={styles.map}>
 
@@ -25,39 +37,26 @@ export default function Map({userPosition, setUserPosition, setSelectedDestinati
                 url={`https://api.mapbox.com/styles/v1/${import.meta.env.VITE_USERNAME}/${import.meta.env.VITE_MAPBOX_STYLE}/tiles/256/{z}/{x}/{y}@2x?access_token=${import.meta.env.VITE_MAPBOX_KEY}`}
             />
             {/*<Polyline positions={path} />*/}
-
             {/*um route von mir zu einem anderen ort brauche ich warscheinlich userPosition und die andere position*/}
             <LocateControl onLocate={setUserPosition} />
             <SinglePin position={userPosition} icon="/img/timetravel-logo.svg" label="You are here" />
             {route && <RoutingControl waypoints={route} />}
-            <SinglePin position={[50.9856089, 12.9797651]}
-                       icon="/img/mittweida-town-hall.svg"
-                       label="City Administration"
-                       onClick={(coords) => {
-                           setSelectedDestination(coords);
-                           setSelectedLabel("City Administration");
-                       }} />
-            <SinglePin position={[50.9851082, 12.9744165]}
-                       icon="/img/mittweida-library.svg"
-                       label="City Library"
-                       onClick={(coords) => {
-                           setSelectedDestination(coords);
-                           setSelectedLabel("City Library");
-                       }} />
-            <SinglePin position={[50.9859774, 12.9726802]}
-                       icon="/img/coffee-ines-haferkom.svg"
-                       label="Cafe Ines Haferkom"
-                       onClick={(coords) => {
-                           setSelectedDestination(coords);
-                           setSelectedLabel("Cafe Ines Haferkom");
-                       }} />
-            <SinglePin position={[50.9860966, 12.971174917]}
-                       icon="/img/faculty-of-media.svg"
-                       label="Faculty of Media"
-                       onClick={(coords) => {
-                           setSelectedDestination(coords);
-                           setSelectedLabel("Faculty of Media");
-                       }} />
+
+            {Object.entries(typeLocationData).map(([slug, loc]) => (
+                <SinglePin
+                    key={slug}
+                    position={loc.position as [number, number]}
+                    icon={visitedLabels.includes(loc.title)
+                    ? "/img/visited.svg"
+                    : loc.icon
+                    }
+                    label={loc.title}
+                    onClick={(coords) => {
+                        setSelectedDestination(coords);
+                        setSelectedLabel(loc.title);
+                    }}
+                />
+            ))}
         </MapContainer>
     )
 }

@@ -31,7 +31,7 @@ export default function RoutingControl({ waypoints }: RoutingControlProps) {
 
         });
 
-        routingControl.on('routinerror', function(e) {
+        routingControl.on('routingerror', function(e) {
             console.error('Routing error:', e?.error);
         });
 

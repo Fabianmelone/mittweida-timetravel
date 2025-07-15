@@ -3,28 +3,46 @@ import {useEffect, useState} from "react";
 import {RouteButton} from "./RouteButton/RouteButton.tsx";
 import L from 'leaflet';
 import {useLocation} from "wouter";
+import useSWR from "swr";
+import useSWRMutation from "swr/mutation";
+import {mutate} from "swr";
+
+//watertower
+// johannes schilling haus
+//technikumplatz
+//stadtkirche
 
 
 // testing for nearby location library
-// navigator.geolocation.getCurrentPosition = (success, error) => {
+// navigator.geolocation.getCurrentPosition = (success) => {
 //     success({
 //         coords: {
 //             latitude: 50.9851082,
 //             longitude: 12.9744165,
 //             accuracy: 10,
+//             altitude: null,
+//             altitudeAccuracy: null,
+//             heading: null,
+//             speed: null,
 //         },
-//     });
+//         timestamp: Date.now(),
+//     } as GeolocationPosition);
 // };
 
-// // testing for nearby stadtverwaltung
-navigator.geolocation.getCurrentPosition = (success, err) => {
+// testing for nearby stadtverwaltung
+navigator.geolocation.getCurrentPosition = (success) => {
     success({
         coords: {
-            latitude: 50.9856089,
-            longitude: 12.9797651,
+            latitude: 50.9856058,
+            longitude: 12.9808861,
             accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
         },
-    });
+        timestamp: Date.now(),
+    } as GeolocationPosition);
 };
 
 
@@ -48,6 +66,7 @@ export default function MainPage() {
             setIsNearby(false);
         }
     }, [userPosition, selectedDestination]);
+
 
 
     const handleRouteRequest = () => {
@@ -75,6 +94,55 @@ export default function MainPage() {
         )
     }
 
+
+    //backend routing post and get using SWR
+    const postLocation = async (url: string, { arg }: { arg: string}) => {
+        const res = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ label: arg }),
+        });
+
+        if (!res.ok) {
+            throw new Error('Failed to mark location as visited');
+        }
+    };
+
+    const { trigger: postVisit, isMutating } = useSWRMutation(
+        'http://localhost:3000/location/visit',
+        postLocation,
+        {
+            onSuccess: () => mutate('http://localhost:3000/location/visited'),
+        }
+    );
+
+    const handleTimeTravel = async () => {
+        if (!selectedLabel) return;
+
+        try {
+            await postVisit(selectedLabel);
+            navigate(`/timetravel/${selectedLabel.toLowerCase().replace(/\s+/g, "-")}`)
+            } catch (err) {
+            console.error("Failed to mark location as visited", err);
+        }
+    };
+
+    //fetch
+    const fetcher = (url: string) => fetch(url).then(res => res.json());
+    const { data: visitedLocation =[], error, isLoading } = useSWR<string[]>(
+        'http://localhost:3000/location/visited',
+        fetcher
+    );
+
+
+    if (error) {
+        return(
+            <div className="error">
+                Failed to load visited location. Please try again later.
+            </div>
+        )
+    }
+
     return (
         <div className="map-container">
             <Map
@@ -83,6 +151,7 @@ export default function MainPage() {
                 setSelectedDestination={setSelectedDestination}
                 setSelectedLabel={setSelectedLabel}
                 route={route}
+                visitedLabels = {visitedLocation}
             />
 
             <RouteButton
@@ -91,10 +160,11 @@ export default function MainPage() {
                 label={selectedLabel}
                 />
 
-            {isNearby && (
+            {selectedLabel && !isLoading && (isNearby || visitedLocation.includes(selectedLabel)) && (
                 <button
                     className="time-travel-button"
-                    onClick={() => navigate(`/timetravel/${selectedLabel?.toLowerCase().replace(/\s+/g, "-")}`)}
+                    onClick={handleTimeTravel}
+                    disabled={isMutating}
                 >
                     Time Travel {selectedLabel}
                 </button>

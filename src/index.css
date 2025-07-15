@@ -3,10 +3,10 @@
   line-height: 1.5;
   font-weight: 400;
 
-  --timetravel-orange: #ED5003;
+  --timetravel-orange: #CF4602;
   --timetravel-blue: #003399;
   color-scheme: light dark;
-  color: var(--timetravel-orange);
+  color: #fff;
   background-color: white;
 
   font-synthesis: none;
@@ -143,10 +143,10 @@ div.welcome-page {
     transform: translateX(-50%);
     background: url("../public/img/arrow-right.svg") no-repeat right 10px center;
     background-color: var(--timetravel-orange);
-    color: var(--timetravel-blue);
     font-family: "Viga", sans-serif;
     font-weight: bold;
     font-size: 1.25rem;
+    color: #fff;
     &:hover {
       box-shadow: 0 0 1rem var(--timetravel-orange);
     }
@@ -162,18 +162,23 @@ div.welcome-page {
     position: absolute;
     bottom: 2rem;
     right: 10px;
-    background-color: var(--timetravel-orange);
+    width: 3rem;
+    height:  3rem;
     z-index: 10000;
+    border-radius: 10px;
+    background: url("../public/img/locate-me.svg") no-repeat center center;
+    background-size: 32px;
+    background-color: var(--timetravel-orange);
   }
   .my-location {
     img {
-      width: 48px;
-      height: 48px;
+      width: 32px;
+      height: 32px;
     }
     .pin-label {
-      font-size: 1.75rem;
+      font-size: 1.25rem;
       width: 8rem;
-      margin-left: -2.3rem;
+      margin-left: -2.8rem;
       font-family:  "Viga", sans-serif;
       color: var(--timetravel-blue);
       text-align: center;
@@ -191,7 +196,7 @@ div.welcome-page {
     width: 300px;
     transform: translateX(-50%);
     background-color: var(--timetravel-blue);
-    color: var(--timetravel-orange);
+    color: #fff;
     padding: 1rem;
     padding-right: 3rem;
     font-size: 1.2rem;
@@ -199,10 +204,70 @@ div.welcome-page {
     border-radius: 10px;
     z-index: 1000;
     cursor: pointer;
-    background: url("/public/img/timetravel-logo.svg") center right 1rem no-repeat;
+    background: url("/public/img/timetravel-logo-invert.svg") center right 1rem no-repeat;
     background-size: 3rem;
     background-color: var(--timetravel-blue);
   }
+
+  .leaflet-touch .leaflet-bar {
+    border: none;
+    a:first-child,
+    a:last-child {
+      background-color: var(--timetravel-orange);
+      width: 48px;
+      height:  48px;
+      line-height: 38px;
+      span {
+        color: #fff;
+        font-size: 42px;
+      }
+    }
+    a:first-child {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    a:last-child {
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+  }
+
+  .leaflet-right .leaflet-routing-container.leaflet-routing-container-hide {
+    background-color: var(--timetravel-orange);
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+  }
+
+  .leaflet-routing-alt, .leaflet-routing-geocoders, .leaflet-routing-error {
+    background-color: var(--timetravel-orange);
+    color: #fff;
+    border-radius: 10px;
+    tr:hover {
+      background-color: #fff;
+      color: #000;
+    }
+    span {
+      color: #fff;
+    }
+  }
+
+  .leaflet-routing-container-hide .leaflet-routing-collapse-btn {
+    background: url("/public/img/navigation.svg")no-repeat center center;
+    left: 10px;
+    top:  10px;
+  }
+  .leaflet-routing-collapse-btn:after {
+    content: " ";
+    background: url("/public/img/close-button.svg")no-repeat center center;
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 5px;
+    width: 24px;
+    height: 24px;
+  }
+
 }
 
 /*Time Travel*/
@@ -212,6 +277,10 @@ div.welcome-page {
     top: 3rem;
     left: 4rem;
     z-index: 4;
+    color:  var(--timetravel-orange);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #fff;
+    font-family: "Tondu", sans-serif;
   }
  .logo {
    position: absolute;

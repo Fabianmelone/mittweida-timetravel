@@ -21,7 +21,6 @@ export function LocateControl({ onLocate }: { onLocate: (position: [number, numb
     }
     return (
         <button onClick={handleLocate} className="find-me-button">
-            Find me
         </button>
     );
 }

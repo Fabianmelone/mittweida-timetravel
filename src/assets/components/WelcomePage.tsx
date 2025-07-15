@@ -9,8 +9,9 @@ export default function WelcomePage() {
         <div className="welcome-page">
 
             <ImageSlider
-                imageOne={'../public/img/mittweida-now-2020.png'}
-                imageTwo={"../public/img/mittweida-before-1914.png"} />
+                imageOne={'/img/mittweida-2020-crop2.png'}
+                imageTwo={"/img/mittweida-1914-crop2.png"}
+            />
             <WelcomeText />
             <button
                 className="start-button"

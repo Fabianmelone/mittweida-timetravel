@@ -3,47 +3,13 @@ import { useLocation }  from 'wouter';
 import styles from "./ImageSlider.module.css";
 
 
-const AfterMoreInfo = ({ isExpanded, toggle, imageRevealFraq }: { isExpanded: boolean, toggle: () => void, imageRevealFraq: number }) => (
-    <div className={`${styles.additionalInfo} ${isExpanded ? styles.expanded : styles.collapsed}`} style={{top: `${imageRevealFraq * 2}%`}}>
-        <button
-            className={`${styles.slideContent} ${isExpanded ? styles.expandButton : styles.collapseButton}`}
-            onClick={toggle}
-            aria-label={isExpanded ? 'Collapse content' : 'Expand content'}
-        />
-        <h2>After</h2>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-            takimata sanctus est Lorem ipsum dolor sit amet.</p>
-    </div>
-)
-
-const BeforeMoreInfo = ({ isExpanded, toggle, imageRevealFraq }: { isExpanded: boolean, toggle: () => void, imageRevealFraq: number }) => (
-    <div className={`${styles.additionalInfo} ${isExpanded ? styles.expanded : styles.collapsed}`} style={{top: `${(200 + (-1 * imageRevealFraq * 2))}%`}}>
-        <button
-            className={`${styles.slideContent} ${isExpanded ? styles.expandButton : styles.collapseButton}`}
-            onClick={toggle}
-            aria-label={isExpanded ? 'Collapse content' : 'Expand content'}
-        />
-        <h2>Before</h2>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-            takimata sanctus est Lorem ipsum dolor sit amet.</p>
-    </div>
-)
-
 interface ImageProps {
-    imageOne: string;
-    imageTwo: string;
+    imageOne: string,
+    imageTwo: string,
+    beforeText?: string,
+    afterText?: string
 }
-export default function ImageSlider({imageOne, imageTwo}: ImageProps) {
+export default function ImageSlider({imageOne, imageTwo, beforeText, afterText}: ImageProps) {
     const [imageRevealFraq, setImageRevealFraq] = useState(0.5);
     const imageContainer = useRef<HTMLDivElement>(null);
     const [location] = useLocation() as [string, (to: string) => void];
@@ -88,6 +54,31 @@ export default function ImageSlider({imageOne, imageTwo}: ImageProps) {
     const before = imageRevealFraq > 0.5;
 
     const [isExpanded, setIsExpanded] = useState(false);
+
+    const AfterMoreInfo = ({ isExpanded, toggle, imageRevealFraq }: { isExpanded: boolean, toggle: () => void, imageRevealFraq: number }) => (
+        <div className={`${styles.additionalInfo} ${isExpanded ? styles.expanded : styles.collapsed}`} style={{top: `${50 + (imageRevealFraq * 2)}%`}}>
+            <button
+                className={`${styles.slideContent} ${isExpanded ? styles.expandButton : styles.collapseButton}`}
+                onClick={toggle}
+                aria-label={isExpanded ? 'Collapse content' : 'Expand content'}
+            />
+            <h2>After</h2>
+            <p>{afterText}</p>
+        </div>
+    )
+
+    const BeforeMoreInfo = ({ isExpanded, toggle, imageRevealFraq }: { isExpanded: boolean, toggle: () => void, imageRevealFraq: number }) => (
+        <div className={`${styles.additionalInfo} ${isExpanded ? styles.expanded : styles.collapsed}`} style={{top: `${(250 + (-1 * imageRevealFraq * 2))}%`}}>
+            <button
+                className={`${styles.slideContent} ${isExpanded ? styles.expandButton : styles.collapseButton}`}
+                onClick={toggle}
+                aria-label={isExpanded ? 'Collapse content' : 'Expand content'}
+            />
+            <h2>Before</h2>
+            <p>{beforeText}</p>
+        </div>
+    )
+
 
     return (
         <div className={styles.ImageSlider} ref={imageContainer} aria-label="Before and After Image Slider">
