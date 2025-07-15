@@ -118,6 +118,10 @@
         margin-top: 2rem;
         font-size: 2rem;
     }
+    div {
+        height: 200px;
+        overflow-y: scroll;
+    }
 }
 
 .collapsed {

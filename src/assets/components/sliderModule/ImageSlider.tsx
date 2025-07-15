@@ -56,26 +56,31 @@ export default function ImageSlider({imageOne, imageTwo, beforeText, afterText}:
     const [isExpanded, setIsExpanded] = useState(false);
 
     const AfterMoreInfo = ({ isExpanded, toggle, imageRevealFraq }: { isExpanded: boolean, toggle: () => void, imageRevealFraq: number }) => (
-        <div className={`${styles.additionalInfo} ${isExpanded ? styles.expanded : styles.collapsed}`} style={{top: `${50 + (imageRevealFraq * 2)}%`}}>
+        <div className={`${styles.additionalInfo} ${isExpanded ? styles.expanded : styles.collapsed}`} style={{top: `${20 + (imageRevealFraq * 2)}%`}}>
             <button
                 className={`${styles.slideContent} ${isExpanded ? styles.expandButton : styles.collapseButton}`}
                 onClick={toggle}
                 aria-label={isExpanded ? 'Collapse content' : 'Expand content'}
             />
             <h2>After</h2>
-            <p>{afterText}</p>
+            <div>
+                <p>{afterText}</p>
+            </div>
         </div>
     )
 
     const BeforeMoreInfo = ({ isExpanded, toggle, imageRevealFraq }: { isExpanded: boolean, toggle: () => void, imageRevealFraq: number }) => (
-        <div className={`${styles.additionalInfo} ${isExpanded ? styles.expanded : styles.collapsed}`} style={{top: `${(250 + (-1 * imageRevealFraq * 2))}%`}}>
+        <div className={`${styles.additionalInfo} ${isExpanded ? styles.expanded : styles.collapsed}`} style={{top: `${(220 + (-1 * imageRevealFraq * 2))}%`}}>
             <button
                 className={`${styles.slideContent} ${isExpanded ? styles.expandButton : styles.collapseButton}`}
                 onClick={toggle}
                 aria-label={isExpanded ? 'Collapse content' : 'Expand content'}
             />
             <h2>Before</h2>
-            <p>{beforeText}</p>
+            <div>
+                <p>{beforeText}</p>
+            </div>
+           
         </div>
     )
 
