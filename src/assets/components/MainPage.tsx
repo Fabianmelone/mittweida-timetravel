@@ -17,8 +17,8 @@ import {mutate} from "swr";
 navigator.geolocation.getCurrentPosition = (success) => {
     success({
         coords: {
-            latitude: 50.9851082,
-            longitude: 12.9744165,
+            latitude: 50.985651,
+            longitude: 12.973232,
             accuracy: 10,
             altitude: null,
             altitudeAccuracy: null,
