@@ -34,8 +34,7 @@ export default function Map({userPosition, setUserPosition, setSelectedDestinati
 
             <TileLayer
                 attribution='© <a href="https://www.mapbox.com/about/maps">Mapbox</a> ©<a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a><strong><a href="https://apps.mapbox.com/feedback/" target="_blank">Improve this map</a></strong>'
-                // url={`https://api.mapbox.com/styles/v1/${import.meta.env.VITE_USERNAME}/${import.meta.env.VITE_MAPBOX_STYLE}/tiles/256/{z}/{x}/{y}@2x?access_token=${import.meta.env.VITE_MAPBOX_KEY}`}
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                url={`https://api.mapbox.com/styles/v1/${import.meta.env.VITE_USERNAME}/${import.meta.env.VITE_MAPBOX_STYLE}/tiles/256/{z}/{x}/{y}@2x?access_token=${import.meta.env.VITE_MAPBOX_KEY}`}
             />
             {/*<Polyline positions={path} />*/}
             {/*um route von mir zu einem anderen ort brauche ich warscheinlich userPosition und die andere position*/}

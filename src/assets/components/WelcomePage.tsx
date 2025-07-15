@@ -9,8 +9,8 @@ export default function WelcomePage() {
         <div className="welcome-page">
 
             <ImageSlider
-                imageOne={'/img/mittweida-2020-crop2.png'}
-                imageTwo={"/img/mittweida-1914-crop2.png"}
+                imageOne={'./img/mittweida-2020-crop2.png'}
+                imageTwo={"./img/mittweida-1914-crop2.png"}
             />
             <WelcomeText />
             <button
