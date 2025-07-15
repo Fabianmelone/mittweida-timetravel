@@ -129,18 +129,13 @@ export default function MainPage() {
 
     //fetch
     const fetcher = (url: string) => fetch(url).then(res => res.json());
-    const { data: visitedLocation =[], error, isLoading } = useSWR<string[]>(
+    const { data: visitedLocation =[] , error, isLoading } = useSWR<string[]>(
         'http://localhost:3000/location/visited',
         fetcher
     );
 
-
     if (error) {
-        return(
-            <div className="error">
-                Failed to load visited location. Please try again later.
-            </div>
-        )
+        console.error("Failed to load Api", error);
     }
 
     return (
