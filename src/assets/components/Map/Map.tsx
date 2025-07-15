@@ -47,7 +47,7 @@ export default function Map({userPosition, setUserPosition, setSelectedDestinati
                     key={slug}
                     position={loc.position as [number, number]}
                     icon={visitedLabels.includes(loc.title)
-                    ? "/img/visited.svg"
+                    ? "./img/visited.svg"
                     : loc.icon
                     }
                     label={loc.title}
