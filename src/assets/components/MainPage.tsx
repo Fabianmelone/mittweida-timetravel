@@ -7,7 +7,7 @@ import useSWR from "swr";
 import useSWRMutation from "swr/mutation";
 import {mutate} from "swr";
 
-//watertower
+//watertowers
 // johannes schilling haus
 //technikumplatz
 //stadtkirche
