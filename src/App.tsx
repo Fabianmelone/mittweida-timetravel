@@ -33,7 +33,7 @@ function App() {
       <>
         <Route path="/welcome" component={WelcomePage} />
         <Route path="/timetravel/:slug" component={TimeTravel}/>
-        <Route path="/mittweida-timetravel" component={MainPage} />
+        <Route path="/" component={MainPage} />
       </>
   );
 }

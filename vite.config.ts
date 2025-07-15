@@ -12,5 +12,5 @@ export default defineConfig({
   build: {
     outDir: "docs"
   },
-  base: "/mittweida-timetravel"
+  base: "./"
 })
