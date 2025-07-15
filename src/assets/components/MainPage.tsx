@@ -30,20 +30,20 @@ import {mutate} from "swr";
 // };
 
 // testing for nearby stadtverwaltung
-// navigator.geolocation.getCurrentPosition = (success) => {
-//     success({
-//         coords: {
-//             latitude: 50.985727,
-//             longitude: 12.981443,
-//             accuracy: 10,
-//             altitude: null,
-//             altitudeAccuracy: null,
-//             heading: null,
-//             speed: null,
-//         },
-//         timestamp: Date.now(),
-//     } as GeolocationPosition);
-// };
+navigator.geolocation.getCurrentPosition = (success) => {
+    success({
+        coords: {
+            latitude: 50.985727,
+            longitude: 12.981443,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+        },
+        timestamp: Date.now(),
+    } as GeolocationPosition);
+};
 
 
 export default function MainPage() {
