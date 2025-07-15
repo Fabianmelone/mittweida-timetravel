@@ -6,7 +6,7 @@ import {Route, useLocation, Router} from "wouter";
 import TimeTravel from "./assets/components/TimeTravel.tsx"
 
 
-function App() {
+function RoutedApp() {
     const [location, setLocation] = useLocation();
     const [loading, setLoading] = useState(true);
     const [ready, setReady] = useState(false);
@@ -34,12 +34,21 @@ function App() {
 
 
   return (
-      <Router base="/mittweida-timetravel">
+      <>
         <Route path="/welcome" component={WelcomePage} />
         <Route path="/timetravel/:slug" component={TimeTravel}/>
         <Route path="/" component={MainPage} />
-      </Router>
+      </>
   );
 }
+
+function App() {
+    return (
+        <Router base="/mittweida-timetravel">
+            <RoutedApp />
+        </Router>
+    )
+}
+
 
 export default App;
