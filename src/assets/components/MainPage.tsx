@@ -123,7 +123,7 @@ export default function MainPage() {
             await postVisit(selectedLabel);
             navigate(`/timetravel/${selectedLabel.toLowerCase().replace(/\s+/g, "-")}`)
             } catch (err) {
-            console.error("Failed to mark location as visited", err);
+            console.error("Failed to mark location as visited again", err);
         }
     };
 
