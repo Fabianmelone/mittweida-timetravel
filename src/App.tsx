@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     const hasVisited = localStorage.getItem("hasVisited");
 
-    if (!hasVisited && location === "/") {
+    if (!hasVisited && (location === "/" || location === "")) {
         localStorage.setItem("hasVisited", "true");
         setLocation("/welcome")
     }
