@@ -7,7 +7,7 @@ export default function WelcomeText() {
                     Try it out in this preview :) </p>
             </div>
             <div className="welcome-logo-section">
-                <img src="../public/img/timetravel-logo-invert.svg"/>
+                <img src="./img/timetravel-logo-invert.svg"/>
             </div>
         </div>
     )
