@@ -39,7 +39,7 @@ export default function Map({userPosition, setUserPosition, setSelectedDestinati
             {/*<Polyline positions={path} />*/}
             {/*um route von mir zu einem anderen ort brauche ich warscheinlich userPosition und die andere position*/}
             <LocateControl onLocate={setUserPosition} />
-            <SinglePin position={userPosition} icon="./img/timetravel-logo.svg" label="You are here" />
+            <SinglePin position={userPosition} icon="/img/timetravel-logo.svg" label="You are here" />
             {route && <RoutingControl waypoints={route} />}
 
             {Object.entries(typeLocationData).map(([slug, loc]) => (
