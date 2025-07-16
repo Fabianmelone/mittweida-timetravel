@@ -99,12 +99,15 @@ Once you press Start exploring you can see the (custom) map and the pins for the
 <img width="302" height="297" alt="Screenshot 2025-07-16 at 23 59 40" src="https://github.com/user-attachments/assets/d34eb213-e47f-4ad1-aef5-d33b0174e630" />
 
 You can also see in the bottom right a button that let's you find your current location.
+
 <img width="71" height="83" alt="Screenshot 2025-07-16 at 23 59 56" src="https://github.com/user-attachments/assets/3ca13ff5-d7ae-4c13-ab02-7f1c4c7a4c62" />
 
 On the top left you can zoom in and out of the map.
+
 <img width="75" height="110" alt="Screenshot 2025-07-17 at 00 00 08" src="https://github.com/user-attachments/assets/2a0e6364-56a5-408b-8093-062540c5f39b" />
 
 Once you've clicked one of the pins, a button will appear, that leads you to one of the locations.
+
 <img width="306" height="69" alt="Screenshot 2025-07-17 at 00 00 36" src="https://github.com/user-attachments/assets/6764dce0-28ac-4b76-b088-ecd3407db59b" />
 
 Once you've clicked the Directions to... button it will show you the route to the location that you chose.
