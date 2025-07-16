@@ -16,7 +16,7 @@ export default function TimeTravel({ params }: { params: { slug: string }}) {
                 imageTwo={data.images[1]}
                 afterText={data.beforeAfter[0]}
                 beforeText={data.beforeAfter[1]}/>
-            <img className="logo" src={'../public/img/timetravel-logo.svg'} />
+            <img className="logo" src={'../img/timetravel-logo.svg'} />
         </div>
     )
 }
