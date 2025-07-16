@@ -3,7 +3,7 @@
     "title": "City Administration",
     "position": [50.9856089, 12.9797651],
     "icon": "img/mittweida-town-hall.svg",
-    "images": ["img/mittweida-2020-crop2.png", "img/mittweida-1914-crop2.png"],
+    "images": ["../img/mittweida-2020-crop2.png", "../img/mittweida-1914-crop2.png"],
     "beforeAfter": [
       "The city administration is today Mittweida's central organ and sits in the middle of Mittweida's historic center. The current Mayor is Ralf Schreiber, who leads the city administration, city councils and takes care of the organisation of the city. On top of that, he is also the juridicial representative of the city. Part of the city administration team are also Holger Müller, Anke Kluge and Sebastian Kilisch, who play a big role in facilitating the city.",
       "The district court of Mittweida was contructed 1851 as one of the buildings of the royal country court. It was one of smaller of 16 district courts in the district of Chemnitz and had two judgeships. In the GDR it got refunctioned into a district court of the district Hainichen, which was under the sowjet occupation."]
@@ -12,7 +12,7 @@
     "title": "City Library",
     "position": [50.9851082, 12.9744165],
     "icon": "img/mittweida-library.svg",
-    "images": ["img/mittweida-library-2025-crop.png", "img/mittweida-library-1900-crop.png"],
+    "images": ["../img/mittweida-library-2025-crop.png", "../img/mittweida-library-1900-crop.png"],
     "beforeAfter": [
       "A competition to realize a central city library brought the idea of doing something new with the building back to life. Out of ten concepts that were submitted, one was declared as the winner on December 7th 2018, which was the 'Raum und Bau GmbH, Dresden'. Unfortunately, a lot of the pieces of the old building were to fragile, but the architects managed to integrate some of the old parts in the new building to keep its identity alive. The rebuild of the city library costed around 6,7 million and was a part of a project for the integrated development of the city district between 'Schwanenteich bis Goethehain', which was financed by the operational program of the free state Saxony for the european fond for regional development (EFRE) from 2014 to 2020 which financially supported the project by 80%",
       "The three-story building used to be the cultural center of the city and was used as a ballroom and later as a cinema. After the German reunition the building stood empty, from 1993. Later, around 2013 the city bought the building back from private ownership, but they had to stop using the rooms, because of danger of collapse."]
@@ -21,7 +21,7 @@
     "title": "Cafe Ines Haferkom",
     "position": [50.9859774, 12.9726802],
     "icon": "img/coffee-ines-haferkom.svg",
-    "images": ["img/stadtverwaltung1.jpg", "img/stadtverwaltung2.jpg"],
+    "images": ["../img/stadtverwaltung1.jpg", "../img/stadtverwaltung2.jpg"],
     "beforeAfter": [
       "This is the city administration building of Mittweida after",
       "This is the city administration of Mittweida before"]
@@ -30,7 +30,7 @@
     "title": "Faculty of Media",
     "position": [50.9860966, 12.971174917],
     "icon": "img/faculty-of-media.svg",
-    "images": ["img/stadtverwaltung1.jpg", "img/stadtverwaltung2.jpg"],
+    "images": ["../img/stadtverwaltung1.jpg", "../img/stadtverwaltung2.jpg"],
     "beforeAfter": [
       "This is the city administration building of Mittweida after",
       "This is the city administration of Mittweida before"]
