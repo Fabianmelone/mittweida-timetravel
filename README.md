@@ -135,6 +135,7 @@ You can also scroll the content if it is longer.
 <img width="361" height="364" alt="Screenshot 2025-07-17 at 00 03 34" src="https://github.com/user-attachments/assets/50b10e03-f8b0-4b30-902f-a3557f84b828" />
 
 The 'X' button leads you back to the map.
+
 <img width="61" height="60" alt="Screenshot 2025-07-17 at 00 03 53" src="https://github.com/user-attachments/assets/96072fbc-b72e-468b-8747-231aeaf11e22" />
 
 Bonus: You can also change your location, by uncommenting one of the testlocations and make sure to comment out the other to not run into errors:
