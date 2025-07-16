@@ -114,6 +114,7 @@ Once you've clicked the Directions to... button it will show you the route to th
 <img width="387" height="688" alt="Screenshot 2025-07-17 at 00 01 06" src="https://github.com/user-attachments/assets/0357ea60-5454-4243-a8dc-b5271c6d6565" />
 
 On the top right, you can click the button that gives you specific instructions on how to get to the location.
+
 <img width="54" height="47" alt="Screenshot 2025-07-17 at 00 01 43" src="https://github.com/user-attachments/assets/b6d7c3c6-4b70-414a-9c64-864a43dfcda9" />
 <img width="355" height="219" alt="Screenshot 2025-07-17 at 00 01 57" src="https://github.com/user-attachments/assets/43873513-07c3-47fd-816d-4b37dd8d864c" />
 
@@ -121,6 +122,7 @@ If you are under 100m of a specific location and you clicked on the pin, you wil
 <img width="306" height="67" alt="Screenshot 2025-07-17 at 00 02 09" src="https://github.com/user-attachments/assets/8f577eab-0ab2-4829-b9f3-65583e689cc2" />
 
 Then you can get to the Timetravel page.
+
 <img width="398" height="833" alt="Screenshot 2025-07-17 at 00 02 44" src="https://github.com/user-attachments/assets/df54e380-da08-45ae-9e5c-2c5d3bea2f4c" />
 
 It is very simple, you can swipe the orange button in the middle left and right to see the before or after of the location.
@@ -128,6 +130,7 @@ It is very simple, you can swipe the orange button in the middle left and right 
 
 Once you've reached the end of one side with the slider, there will be an infobox that you can toggle up or down to see more info.
 You can also scroll the content if it is longer.
+
 <img width="417" height="688" alt="Screenshot 2025-07-17 at 00 03 20" src="https://github.com/user-attachments/assets/dac1f3b8-62ee-4834-b011-3b79693e6add" />
 <img width="361" height="364" alt="Screenshot 2025-07-17 at 00 03 34" src="https://github.com/user-attachments/assets/50b10e03-f8b0-4b30-902f-a3557f84b828" />
 
