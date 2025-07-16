@@ -81,7 +81,7 @@ and for phone testing paste the link in your browser after:
   Network:
 ```
 ## Optional (Custom Map)
-If you want to use my custom map, that I created for this app, create a .env in the root of the repository
+If you want to use my custom map (if not the map falls back to the normal Openstreetmap, that I created for this app, create a .env in the root of the repository
 and replace yourApiKey and yourUsername with your data, if you've created a mapbox account:
 ```.env
  VITE_MAPBOX_KEY=yourApiKey
