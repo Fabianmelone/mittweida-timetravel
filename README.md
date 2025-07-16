@@ -172,7 +172,7 @@ In order to see the OpenAPI documentation and test the API routes and endpoints,
 ```
 Then paste the url: 
 ```bash
-  (http://localhost:3000/api)
+  http://localhost:3000/api
 ```
 into your browser.
 
