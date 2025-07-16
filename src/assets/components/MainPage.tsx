@@ -109,10 +109,10 @@ export default function MainPage() {
     };
 
     const { trigger: postVisit, isMutating } = useSWRMutation(
-        'http://1https://014aba9f8b83.ngrok-free.app/location/visit',
+        'https://014aba9f8b83.ngrok-free.app/location/visit',
         postLocation,
         {
-            onSuccess: () => mutate('http://https://014aba9f8b83.ngrok-free.app/location/visited'),
+            onSuccess: () => mutate('https://014aba9f8b83.ngrok-free.app/location/visited'),
         }
     );
 
@@ -134,7 +134,7 @@ export default function MainPage() {
     });
 
     const { data: visitedLocation =[] , error, isLoading } = useSWR<string[]>(
-        'http://https://014aba9f8b83.ngrok-free.app/location/visited',
+        'https://014aba9f8b83.ngrok-free.app/location/visited',
         fetcher
     );
 
