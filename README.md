@@ -12,6 +12,7 @@ This App is built with React for the frontend and Nest.js for the backend.
 - [Optional (Custom Map)](#optional-custom-map)
 - [Usage](#usage)
 - [Testing](#testing)
+- [OpenAPI Docs](#openapi-docs)
 - [Credits](#credits)
 - [License](#license)
 - [How to Contribute](#how-to-contribute)
@@ -162,6 +163,19 @@ To test the LocationController in the backend pls run:
   cd backend/
   npm run test
 ```
+
+## OpenAPI Docs
+In order to see the OpenAPI documentation and test the API routes and endpoints, please run:
+```bash
+  cd backend/
+  npm run start
+```
+Then paste the url: 
+```bash
+  (http://localhost:3000/api)
+```
+into your browser.
+
 
 ## Credits
 N/A
