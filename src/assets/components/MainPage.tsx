@@ -109,10 +109,10 @@ export default function MainPage() {
     };
 
     const { trigger: postVisit, isMutating } = useSWRMutation(
-        'http://localhost:3000/location/visit',
+        'http://172.17.214.162:3000/location/visit',
         postLocation,
         {
-            onSuccess: () => mutate('http://localhost:3000/location/visited'),
+            onSuccess: () => mutate('http://172.17.214.162:3000/location/visited'),
         }
     );
 
@@ -134,7 +134,7 @@ export default function MainPage() {
     });
 
     const { data: visitedLocation =[] , error, isLoading } = useSWR<string[]>(
-        'http://localhost:3000/location/visited',
+        'http://172.17.214.162:3000/location/visited',
         fetcher
     );
 
