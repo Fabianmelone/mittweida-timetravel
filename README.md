@@ -139,6 +139,10 @@ The 'X' button leads you back to the map.
 
 <img width="61" height="60" alt="Screenshot 2025-07-17 at 00 03 53" src="https://github.com/user-attachments/assets/96072fbc-b72e-468b-8747-231aeaf11e22" />
 
+Once you visited a location, the Marker will be replaced with a already visited icon. Now, if you are more than 100m away you can do the Timetravel for the locations that you already visited from anywhere.
+
+<img width="102" height="113" alt="Screenshot 2025-07-17 at 00 41 34" src="https://github.com/user-attachments/assets/c1e0d4d2-e8fa-454f-ba96-867d554ea1e6" />
+
 Bonus: You can also change your location, by uncommenting one of the testlocations and make sure to comment out the other to not run into errors:
 ```ts
   // MainPage.ts
