@@ -130,6 +130,7 @@ export default function MainPage() {
     //fetch
     const fetcher = (url: string) => fetch(url).then(res => {
         if (!res.ok) throw new Error("Failed to fetch");
+        console.log(res.status);
         return res.json();
     });
 
