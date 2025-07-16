@@ -126,6 +126,7 @@ Then you can get to the Timetravel page.
 <img width="398" height="833" alt="Screenshot 2025-07-17 at 00 02 44" src="https://github.com/user-attachments/assets/df54e380-da08-45ae-9e5c-2c5d3bea2f4c" />
 
 It is very simple, you can swipe the orange button in the middle left and right to see the before or after of the location.
+
 <img width="367" height="686" alt="Screenshot 2025-07-17 at 00 02 59" src="https://github.com/user-attachments/assets/d5d58117-0893-4073-a1c3-688b801594f5" />
 
 Once you've reached the end of one side with the slider, there will be an infobox that you can toggle up or down to see more info.
