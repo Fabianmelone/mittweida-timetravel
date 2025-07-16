@@ -29,13 +29,27 @@ interface LocationData {
 const typeLocationData: Record<string, LocationData> = locationData;
 
 export default function Map({userPosition, setUserPosition, setSelectedDestination, setSelectedLabel, route, visitedLabels}: MapProps) {
+
+    const mapboxKey = import.meta.env.VITE_MAPBOX_KEY;
+    const mapboxUsername = import.meta.env.VITE_USERNAME;
+    const mapboxStyle = import.meta.env.VITE_MAPBOX_STYLE;
+
+    const useMapbox = mapboxKey && mapboxUsername && mapboxStyle;
     return (
         <MapContainer center={initialPosition} zoom={16} scrollWheelZoom={false} className={styles.map}>
 
-            <TileLayer
-                attribution='© <a href="https://www.mapbox.com/about/maps">Mapbox</a> ©<a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a><strong><a href="https://apps.mapbox.com/feedback/" target="_blank">Improve this map</a></strong>'
-                url={`https://api.mapbox.com/styles/v1/${import.meta.env.VITE_USERNAME}/${import.meta.env.VITE_MAPBOX_STYLE}/tiles/256/{z}/{x}/{y}@2x?access_token=${import.meta.env.VITE_MAPBOX_KEY}`}
-            />
+            {useMapbox ? (
+                <TileLayer
+                    attribution='© <a href="https://www.mapbox.com/about/maps">Mapbox</a> ©<a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a><strong><a href="https://apps.mapbox.com/feedback/" target="_blank">Improve this map</a></strong>'
+                    url={`https://api.mapbox.com/styles/v1/${import.meta.env.VITE_USERNAME}/${import.meta.env.VITE_MAPBOX_STYLE}/tiles/256/{z}/{x}/{y}@2x?access_token=${import.meta.env.VITE_MAPBOX_KEY}`}
+                />
+            ) : (
+                <TileLayer
+                    attribution='© <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+            )}
+
             {/*<Polyline positions={path} />*/}
             {/*um route von mir zu einem anderen ort brauche ich warscheinlich userPosition und die andere position*/}
             <LocateControl onLocate={setUserPosition} />

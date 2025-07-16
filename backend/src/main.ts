@@ -7,8 +7,7 @@ async function bootstrap() {
     origin: [
       'http://localhost:5173',
       'https://fabianmelone.github.io',
-      'http://172.17.214.162:5173',
-      'https://014aba9f8b83.ngrok-free.app',
+      'http://192.168.178.196:5173',
     ],
     credentials: true,
   });

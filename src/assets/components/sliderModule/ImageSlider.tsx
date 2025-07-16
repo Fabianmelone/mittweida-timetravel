@@ -1,6 +1,7 @@
 import {useState, useRef } from "react";
 import { useLocation }  from 'wouter';
 import styles from "./ImageSlider.module.css";
+import * as React from "react";
 
 
 interface ImageProps {
@@ -34,9 +35,11 @@ export default function ImageSlider({imageOne, imageTwo, beforeText, afterText}:
         window.onmouseup = handleMouseUp;
     }
     //for mobile
-    const handleTouchStart = () => {
+    const handleTouchStart = (event: React.TouchEvent) => {
         window.ontouchmove = handleTouchMove;
         window.ontouchend = handleTouchEnd;
+
+        event.preventDefault();
     }
     const handleMouseMove = (event: MouseEvent): void => {slide(event.clientX);}
     const handleTouchMove = (event: TouchEvent): void =>{slide(event.touches[0].clientX);}

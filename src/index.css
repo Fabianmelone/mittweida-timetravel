@@ -15,6 +15,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  touch-action: none;
+}
+
 @font-face {
   font-family: 'Tondu';
   src: url('/public/fonts/Tondu_Beta.ttf');
@@ -163,7 +172,7 @@ div.welcome-page {
   width: 100vw;
   .find-me-button {
     position: absolute;
-    bottom: 2rem;
+    bottom: 6rem;
     right: 10px;
     width: 3rem;
     height:  3rem;
@@ -219,7 +228,7 @@ div.welcome-page {
       background-color: var(--timetravel-orange);
       width: 48px;
       height:  48px;
-      line-height: 38px;
+      line-height: 45px;
       span {
         color: #fff;
         font-size: 42px;
@@ -280,6 +289,7 @@ div.welcome-page {
     top: 3rem;
     left: 4rem;
     z-index: 4;
+    width: 100px;
     color:  var(--timetravel-orange);
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: #fff;

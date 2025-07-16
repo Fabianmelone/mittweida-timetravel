@@ -14,27 +14,11 @@ import {mutate} from "swr";
 
 
 // testing for nearby location library
-// navigator.geolocation.getCurrentPosition = (success) => {
-//     success({
-//         coords: {
-//             latitude: 50.9860979,
-//             longitude: 12.9674641,
-//             accuracy: 10,
-//             altitude: null,
-//             altitudeAccuracy: null,
-//             heading: null,
-//             speed: null,
-//         },
-//         timestamp: Date.now(),
-//     } as GeolocationPosition);
-// };
-
-// testing for nearby stadtverwaltung
 navigator.geolocation.getCurrentPosition = (success) => {
     success({
         coords: {
-            latitude: 50.985530,
-            longitude: 12.980903,
+            latitude: 50.985957,
+            longitude: 12.973964,
             accuracy: 10,
             altitude: null,
             altitudeAccuracy: null,
@@ -44,6 +28,22 @@ navigator.geolocation.getCurrentPosition = (success) => {
         timestamp: Date.now(),
     } as GeolocationPosition);
 };
+
+// testing for nearby stadtverwaltung
+// navigator.geolocation.getCurrentPosition = (success) => {
+//     success({
+//         coords: {
+//             latitude: 50.985530,
+//             longitude: 12.980903,
+//             accuracy: 10,
+//             altitude: null,
+//             altitudeAccuracy: null,
+//             heading: null,
+//             speed: null,
+//         },
+//         timestamp: Date.now(),
+//     } as GeolocationPosition);
+// };
 
 
 export default function MainPage() {
@@ -109,10 +109,10 @@ export default function MainPage() {
     };
 
     const { trigger: postVisit, isMutating } = useSWRMutation(
-        'https://014aba9f8b83.ngrok-free.app/location/visit',
+        'http://192.168.178.196:3000/location/visit',
         postLocation,
         {
-            onSuccess: () => mutate('https://014aba9f8b83.ngrok-free.app/location/visited'),
+            onSuccess: () => mutate('http://192.168.178.196:3000/location/visited'),
         }
     );
 
@@ -130,12 +130,11 @@ export default function MainPage() {
     //fetch
     const fetcher = (url: string) => fetch(url).then(res => {
         if (!res.ok) throw new Error("Failed to fetch");
-        console.log(res.status);
         return res.json();
     });
 
     const { data: visitedLocation =[] , error, isLoading } = useSWR<string[]>(
-        'https://014aba9f8b83.ngrok-free.app/location/visited',
+        'http://192.168.178.196:3000/location/visited',
         fetcher
     );
 
