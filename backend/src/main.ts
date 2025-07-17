@@ -4,11 +4,12 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  const ipAddress = process.env.VITE_IP_ADDRESS;
   app.enableCors({
     origin: [
       'http://localhost:5173',
       'https://fabianmelone.github.io',
-      'http://192.168.178.196:5173',
+      ipAddress ? `http://${ipAddress}:5137` : '',
     ],
     credentials: true,
   });

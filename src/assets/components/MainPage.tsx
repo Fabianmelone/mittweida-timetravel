@@ -109,10 +109,10 @@ export default function MainPage() {
     };
 
     const { trigger: postVisit, isMutating } = useSWRMutation(
-        'http://192.168.178.196:3000/location/visit',
+        `http://${import.meta.env.VITE_IP_ADDRESS}:3000/location/visit`,
         postLocation,
         {
-            onSuccess: () => mutate('http://192.168.178.196:3000/location/visited'),
+            onSuccess: () => mutate(`http://${import.meta.env.VITE_IP_ADDRESS}:3000/location/visited`),
         }
     );
 
@@ -134,7 +134,7 @@ export default function MainPage() {
     });
 
     const { data: visitedLocation =[] , error, isLoading } = useSWR<string[]>(
-        'http://192.168.178.196:3000/location/visited',
+        `http://${import.meta.env.VITE_IP_ADDRESS}:3000/location/visited`,
         fetcher
     );
 
