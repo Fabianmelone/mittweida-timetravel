@@ -23,6 +23,13 @@ Once the repository is cloned into your IDE, you can run:
 ```bash
   npm install
 ```
+
+The simple way to add your IP address is to create a .env file in your root folder and add the IP_Address there
+```.env
+VITE_IP_ADDRESS=yourIpAddress
+```
+Instructions on how to find out your IP address are under the following instructions...
+If you want to manually add your IP address,
 Make sure to replace all the localhost:3000 in the src/assets/components/MainPage.tsx with yourIP:3000
 e.g.replace:
 ```js
